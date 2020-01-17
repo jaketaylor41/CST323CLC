@@ -11,17 +11,15 @@
  * |
  */
 Route::get('/', function () {
-    return view('login');
+    return view('calculator');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/calculator', function () {
+    return view('calculator');
 });
 
-Route::post('/processlogin', 'AccountController@login');
+Route::post('/processCalculate', 'CalculatorController@calculate');
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/result', function () {
+    return view('result');
 });
-
-Route::post('/processregister', 'AccountController@Register');
