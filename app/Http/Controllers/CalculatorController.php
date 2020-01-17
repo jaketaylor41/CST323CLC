@@ -8,6 +8,16 @@ use App\Models\Calculation;
 
 class CalculatorController extends Controller
 {
+    /**
+     * Controller method that takes in a request
+     * Sets the data from the request to variables
+     * Creates a Calculation object from the variables
+     * Creates an associative array with the object
+     * Returns result view and pushes the data array
+     * 
+     * @param Request $request      Implicit request
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory     result view
+     */
     public function calculate(Request $request){
         $title = $request->input('title');
         $years = $request->input('years');

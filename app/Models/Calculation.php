@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+// product class
 class Calculation{
     
     private $id;

@@ -1,7 +1,4 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-?>
+<!-- This file is a view for displaying the calculation form -->
 <div class="container">
 	<h2>Calculate Hours</h2>
 
