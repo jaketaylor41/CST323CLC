@@ -45,4 +45,7 @@ class Calculation{
         $this->result = $result;
     }
       
+    public function __toString(){
+        return "Id: " . $this->id . ", Title: " . $this->title . ", Result: " . $this->result;
+    }
 }

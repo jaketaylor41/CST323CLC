@@ -1,44 +1,42 @@
 <?php
 namespace App\Models\Services\Business;
 
+use Illuminate\Support\Facades\Log;
+use App\Models\Utility\DatabaseModel;
 use App\Models\Services\Data\CalculationDataService;
 
-// not used yet
 class CalculationBusinessService
 {
 
-    private $dbService;
-
-    function __construct()
-    {
-        $this->dbService = new CalculationDataService();
-    }
-
     function newCalculation($newCalculation)
     {
-        return $this->dbService->create($newCalculation);
-    }
+        Log::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $newCalculation);
 
-    function getCalculation($id)
-    {
-        return $this->dbService->read($id);
+        $Database = new DatabaseModel();
+        $db = $Database->getDb();
+
+        $ds = new CalculationDataService($db);
+
+        $flag = $ds->create($newCalculation);
+
+        Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $flag);
+        return $flag;
     }
 
     function getAllCalculations()
     {
-        return $this->dbService->readAll();
+        Log::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
+        
+        $Database = new DatabaseModel();
+        $db = $Database->getDb();
+        
+        $ds = new CalculationDataService($db);
+        
+        $flag = $ds->readAll();
+        
+        Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1));
+        return $flag;
     }
-
-    function editCalculation($updatedCalculation)
-    {
-        return $this->dbService->update($updatedCalculation);
-    }
-
-    function deleteCalculation($id)
-    {
-        return $this->dbService->delete($id);
-    }
-
 }
  
  

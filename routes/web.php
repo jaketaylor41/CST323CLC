@@ -21,10 +21,12 @@ Route::get('/calculator', function () {
     return view('calculator');
 });
 
- // Route for calling the calculate method from the controller
-Route::post('/processCalculate', 'CalculatorController@calculate');
+// Route for calling the calculate method from the controller
+Route::post('/processCalculate', 'CalculatorController@onCalculate');
 
 // Route for navigating to the result page
 Route::get('/result', function () {
     return view('result');
 });
+
+Route::get('/all', 'CalculatorController@onGetAll');

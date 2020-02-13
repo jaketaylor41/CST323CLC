@@ -1,6 +1,7 @@
 <!-- This file is a view for displaying the result of the calculation in a table -->
 
-<link rel="stylesheet" type="text/css" href="/cst323_milestone/public/css/custom-styles.css">
+<link rel="stylesheet" type="text/css"
+	href="/cst323_milestone/public/css/custom-styles.css">
 <body>
 	<table class="table">
 
@@ -16,15 +17,18 @@
 		<tbody>
 
 <?php
-    echo "<tr>";
-    
-    echo "<td>" . $c->getTitle() . "</td>";
-    echo "<td>" . $c->getResult() . "</td>";
+echo "<tr>";
+
+echo "<td>" . $c->getTitle() . "</td>";
+echo "<td>" . $c->getResult() . "</td>";
 
 ?>
 
-</tbody>
+		</tbody>
 
 	</table>
+
+<a href="calculator">Back</a>
+<a href="all">View All</a>
 
 </body>
