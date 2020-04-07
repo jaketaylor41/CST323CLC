@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Exception;
 use App\Models\Services\Business\CalculationBusinessService;
+use App\Models\Utility\MyLogger;
 use App\Models\Calculation;
 
 class CalculatorController extends Controller
@@ -21,6 +21,8 @@ class CalculatorController extends Controller
      * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory     result view
      */
     public function onCalculate(Request $request){
+        MyLogger::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
+        
         $title = $request->input('title');
         $years = $request->input('years');
         $months = $request->input('months');
@@ -32,33 +34,34 @@ class CalculatorController extends Controller
         $bs->newCalculation($c);
         
         $data = ['c' => $c];
+        MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to calculator view");
         return view('result')->with($data);
     }
     
     public function onGetAll(){
-        Log::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
+        MyLogger::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
         try {
             $bs = new CalculationBusinessService();
             $flag = $bs->getAllCalculations();
             
             if ($flag == null) {
-                Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to calculator view");
+                MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to calculator view");
                 return view('calculator');
             }
             
             $data = [
                 'allCalculations' => $flag
             ];
-            Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to allCalculations view");
+            MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to allCalculations view");
             return view('allCalculations')->with($data);
         } catch (Exception $e) {
-            Log::error("Exception ", array(
+            MyLogger::error("Exception ", array(
                 "message" => $e->getMessage()
             ));
             $data = [
                 'errorMsg' => $e->getMessage()
             ];
-            Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to exception view");
+            MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to exception view");
             return view('exception')->with($data);
         }
     }

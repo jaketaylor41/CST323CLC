@@ -1,8 +1,8 @@
 <?php
 namespace App\Models\Services\Business;
 
-use Illuminate\Support\Facades\Log;
 use App\Models\Utility\DatabaseModel;
+use App\Models\Utility\MyLogger;
 use App\Models\Services\Data\CalculationDataService;
 
 class CalculationBusinessService
@@ -10,7 +10,7 @@ class CalculationBusinessService
 
     function newCalculation($newCalculation)
     {
-        Log::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $newCalculation);
+        MyLogger::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $newCalculation);
 
         $Database = new DatabaseModel();
         $db = $Database->getDb();
@@ -19,13 +19,13 @@ class CalculationBusinessService
 
         $flag = $ds->create($newCalculation);
 
-        Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $flag);
+        MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " with " . $flag);
         return $flag;
     }
 
     function getAllCalculations()
     {
-        Log::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
+        MyLogger::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
         
         $Database = new DatabaseModel();
         $db = $Database->getDb();
@@ -34,7 +34,7 @@ class CalculationBusinessService
         
         $flag = $ds->readAll();
         
-        Log::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1));
+        MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1));
         return $flag;
     }
 }
