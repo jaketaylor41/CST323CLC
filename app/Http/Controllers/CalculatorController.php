@@ -31,7 +31,7 @@ class CalculatorController extends Controller
         $days = $request->input('days');
         $hours = $request->input('hours');
 
-        $c = new Calculation(0, $title, $years, $months, $days, $hours);
+        $c = new Calculation($title, $years, $months, $days, $hours);
         $bs = new CalculationBusinessService();
         $bs->newCalculation($c);
 

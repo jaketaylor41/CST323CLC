@@ -11,7 +11,7 @@ class Calculation{
     function __construct($title, $years, $months, $days, $hours){
         $this->title = $title;
         $this->result = ($years * 8760) + ($months * 730) + ($days * 24) + ($hours);
-    }
+    } 
     
     public function getTitle()
     {
@@ -22,7 +22,7 @@ class Calculation{
     {
         return $this->result;
     }
-    
+
     public function setTitle($title)
     {
         $this->title = $title;
