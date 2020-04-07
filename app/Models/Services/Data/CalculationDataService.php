@@ -48,9 +48,7 @@ class CalculationDataService implements DataServiceInterface
 
     // not implemented
     function read($calculation)
-    {
-
-    }
+    {}
 
     /**
      *
@@ -70,11 +68,10 @@ class CalculationDataService implements DataServiceInterface
 
             $calculation_array = array();
             while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $id = $result["ID"];
                 $title = $result['TITLE'];
                 $result = $result['RESULT'];
-                
-                $c = new Calculation($id, $title, 0, 0, 0, $result);
+
+                $c = new Calculation($title, 0, 0, 0, $result);
 
                 array_push($calculation_array, $c);
             }
@@ -91,14 +88,9 @@ class CalculationDataService implements DataServiceInterface
 
     // not implemented
     function update($user)
-    {
-
-    }
+    {}
 
     // not implemented
     function delete($user)
-    {
-
-    }
-
+    {}
 }

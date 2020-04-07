@@ -26,15 +26,15 @@ class CalculationBusinessService
     function getAllCalculations()
     {
         MyLogger::info("\Entering " . substr(strrchr(__METHOD__, "\\"), 1));
-        
+
         $Database = new DatabaseModel();
         $db = $Database->getDb();
-        
+
         $ds = new CalculationDataService($db);
-        
+
         $flag = $ds->readAll();
-        
-        MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1));
+
+        MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " with array of calculations");
         return $flag;
     }
 }
