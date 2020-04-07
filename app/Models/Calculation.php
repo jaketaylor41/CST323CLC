@@ -13,11 +13,6 @@ class Calculation{
         $this->result = ($years * 8760) + ($months * 730) + ($days * 24) + ($hours);
     }
     
-    public function getId()
-    {
-        return $this->id;
-    }
-    
     public function getTitle()
     {
         return $this->title;
@@ -26,11 +21,6 @@ class Calculation{
     public function getResult()
     {
         return $this->result;
-    }
-    
-    public function setId($id)
-    {
-        $this->id = $id;
     }
     
     public function setTitle($title)
