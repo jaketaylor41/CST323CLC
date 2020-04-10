@@ -1,6 +1,6 @@
 <!-- This file is a view for displaying the calculation form -->
 <div class="container">
-	<h2>Calculate Amount of Hours</h2>
+	<h2>Calculate Hours</h2>
 
 	<form action="processCalculate" method="POST">
 		<input type="hidden" name="_token" value="<?php echo csrf_token()?>" />
