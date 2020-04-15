@@ -1,4 +1,11 @@
 <?php
+/**
+ * Controller | app/Htp/Controllers/CalculatorController.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

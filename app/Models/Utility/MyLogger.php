@@ -6,6 +6,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Formatter\LineFormatter;
 
 class MyLogger implements ILogger{
+    
     private static $logger = null;   
 
     public static function getLogger()

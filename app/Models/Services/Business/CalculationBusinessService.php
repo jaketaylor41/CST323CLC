@@ -1,4 +1,11 @@
 <?php
+/**
+ * Business Service | app/Models/Services/Business/CalculationBusinessService.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey
+ */
+
 namespace App\Models\Services\Business;
 
 use App\Models\Utility\DatabaseModel;

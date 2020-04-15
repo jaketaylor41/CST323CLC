@@ -1,4 +1,10 @@
 <?php
+/**
+ * Data Service | app/Models/Services/Data/CalculationDataService.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey
+ */
 namespace App\Models\Services\Data;
 
 use App\Models\Utility\DatabaseException;

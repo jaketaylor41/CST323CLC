@@ -1,4 +1,10 @@
 <?php
+/**
+ * Data Service Interface | app/Models/Services/Data/DataServiceInterface.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey
+ */
 namespace App\Models\Services\Data;
 
 interface DataServiceInterface

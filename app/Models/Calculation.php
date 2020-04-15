@@ -1,8 +1,12 @@
 <?php
-
+/**
+ * Model | app/Models/Calculation.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey
+ */
 namespace App\Models;
 
-// product class
 class Calculation{
     
     private $title;
