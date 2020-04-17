@@ -1,4 +1,10 @@
 <?php
+/**
+ * Model | app/Models/Utility/DatabaseException.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey & Jacob Taylor
+ */
 namespace App\Models\Utility;
 //This model is for creating a custom database exception
 

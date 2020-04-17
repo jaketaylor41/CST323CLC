@@ -3,10 +3,11 @@
  * Model | app/Models/Calculation.php
  *
  * @package     cst323_milestone
- * @author      Henry Harvey
+ * @author      Henry Harvey & Jacob Taylor
  */
 namespace App\Models;
 
+// holds information enterred by the user to calculate and display
 class Calculation{
     
     private $title;

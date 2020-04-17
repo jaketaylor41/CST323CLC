@@ -3,7 +3,7 @@
  * Controller | app/Htp/Controllers/CalculatorController.php
  *
  * @package     cst323_milestone
- * @author      Henry Harvey
+ * @author      Henry Harvey & Jacob Taylor
  */
 
 namespace App\Http\Controllers;
@@ -62,6 +62,7 @@ class CalculatorController extends Controller
      * If the result is null, returns the calculator view
      * Else creates an associative array with the object
      * Returns allCalculations view and pushes the data array
+     * If Exception, pass error to exception page
      *
      * @param Request $request
      *            Implicit request
@@ -91,8 +92,9 @@ class CalculatorController extends Controller
             
             // Returns allCalculations view and pushes the data array
             MyLogger::info("/Exiting  " . substr(strrchr(__METHOD__, "\\"), 1) . " to allCalculations view with all calculations");
-            return view('allCalculations')->with($data);
+            return view('allCalculations')->with($data);      
         } catch (Exception $e) {
+            // If Exception, pass error to exception page
             MyLogger::error("Exception ", array(
                 "message" => $e->getMessage()
             ));

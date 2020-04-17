@@ -1,4 +1,10 @@
 <?php
+/**
+ * Model | app/Models/Utility/DatabaseModel.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey & Jacob Taylor
+ */
 namespace App\Models\Utility;
 //This model is for retrieving a new database. Used in business services
 

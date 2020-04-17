@@ -1,4 +1,10 @@
 <?php
+/**
+ * Interface | app/Models/Utility/ILogger.php
+ *
+ * @package     cst323_milestone
+ * @author      Henry Harvey & Jacob Taylor
+ */
 namespace App\Models\Utility;
 
 interface ILogger

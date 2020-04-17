@@ -3,7 +3,7 @@
  * Business Service | app/Models/Services/Business/CalculationBusinessService.php
  *
  * @package     cst323_milestone
- * @author      Henry Harvey
+ * @author      Henry Harvey & Jacob Taylor
  */
 
 namespace App\Models\Services\Business;
